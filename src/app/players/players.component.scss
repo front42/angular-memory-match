@@ -1,0 +1,33 @@
+.players {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 581px;
+  height: 467px;
+  border-radius: 2px;
+  background: url('../../assets/metal-texture.png');
+  box-shadow: 0 0 17px 3px #000;
+}
+
+.close {
+  position: absolute;
+  top: 7px;
+  right: 17px;
+  font-size: 27px;
+  font-weight: bold;
+  color: #a52016;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover {
+  text-shadow: 0 0 2px #a52016;
+}
+
+.close:active {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
