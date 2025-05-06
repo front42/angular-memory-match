@@ -3,7 +3,7 @@
     <div class="left-panel">
       <div class="timer">{{ minutes | number : '2.0' }}:{{ seconds | number : '2.0' }}</div>
       <button class="btn play" [disabled]="isPlaying" (click)="play()">Play</button>
-      <button class="btn" (click)="stop()">Stop</button>
+      <button class="btn" [disabled]="!isPlaying" (click)="stop()">Stop</button>
     </div>
     <h2>Just play and remember the Time...</h2>
     <div class="right-panel">
@@ -13,15 +13,16 @@
     </div>
   </header>
   <div class="game">
-    @for (disc of discs; track $index) {
-      <div class="disc"><img src="{{ disc }}" alt="Disc" /></div>
+    @for (album of albums; track $index) {
+      <div class="disc"><img src="{{ album }}" alt="Disc" /></div>
     }
-    <div class="router-wrapper">
+    <div class="router-wrapper" *ngIf="!isMainPage">
       <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="overlay" [hidden]="isMainPage"></div>
   <footer class="footer">
     <p>&copy;&#8239;2025 All Rights Reserved. <a href="https://github.com/front42" target="_blank">&#64;front42</a></p>
   </footer>
 </div>
+<div class="overlay" *ngIf="!isMainPage"></div>
+<div class="warning"><h2>Turn your device</h2></div>

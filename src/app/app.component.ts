@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
-import { DecimalPipe } from '@angular/common';
+import { DecimalPipe, NgIf } from '@angular/common';
 import { filter } from 'rxjs';
 
 @Component({
@@ -8,32 +8,40 @@ import { filter } from 'rxjs';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, RouterLink, DecimalPipe],
+  imports: [RouterOutlet, RouterLink, DecimalPipe, NgIf],
 })
 export class AppComponent implements OnInit {
   protected isMainPage: boolean = true;
   protected isPlaying: boolean = false;
-  protected discs: string[] = [];
+  protected albumsInOrder: string[] = [];
+  protected albums: string[] = [];
   protected minutes: number = 0;
   protected seconds: number = 0;
   protected intervalId: any;
 
   constructor(private router: Router) {
     for (let i = 0; i < 14; i++) {
-      this.discs.push(`assets/disc-${i < 10 ? '0' + i : i}.jpg`, `assets/disc-${i < 10 ? '0' + i : i}.jpg`);
+      this.albumsInOrder.push(`assets/album-${i < 10 ? '0' + i : i}.jpg`, `assets/album-${i < 10 ? '0' + i : i}.jpg`);
     }
+    this.albums = this.albumsInOrder.slice();
   }
 
-  protected shuffle(array: string[]): void {
-    for (let i = array.length - 1; i > 0; i--) {
+  protected order() {
+    this.albums = this.albumsInOrder.slice();
+  }
+
+  protected shuffle(array: string[]): string[] {
+    const shuffledArr = array.slice();
+    for (let i = shuffledArr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      [shuffledArr[i], shuffledArr[j]] = [shuffledArr[j], shuffledArr[i]];
     }
+    return shuffledArr;
   }
 
   protected play(): void {
     this.isPlaying = true;
-    this.shuffle(this.discs);
+    this.albums = this.shuffle(this.albumsInOrder);
     this.intervalId = setInterval(() => {
       this.seconds += 1;
       if (this.seconds === 60) {
@@ -47,6 +55,7 @@ export class AppComponent implements OnInit {
     this.isPlaying = false;
     this.minutes = this.seconds = 0;
     clearInterval(this.intervalId);
+    this.order();
   }
 
   ngOnInit(): void {

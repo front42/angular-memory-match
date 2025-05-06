@@ -4,13 +4,15 @@
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  max-width: 1025px;
+  max-width: 1055px;
   height: 100vh;
+  overflow: hidden;
   // border: 1px solid;
 }
 
@@ -91,9 +93,9 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 15px auto;
+  margin: 15px;
   width: 1010px;
-  height: 567px;
+  height: 568px;
   // border: 1px solid;
 }
 
@@ -103,30 +105,26 @@ img {
   height: 130px;
   border-radius: 2px;
   box-shadow: 0 3px 5px black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+img:hover {
+  // transform: scale(1.01);
+  box-shadow: 0 3px 8px black;
 }
 
 .router-wrapper {
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   z-index: 2;
   // border: 1px solid;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: black;
-  opacity: 0.4;
-  z-index: 1;
 }
 
 .footer {
@@ -144,4 +142,145 @@ a {
 
 a:hover {
   text-shadow: 0 0 4px #ffeeb5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+.warning {
+  display: none;
+}
+
+@media screen and (max-width: 1055px) {
+  .container {
+    max-width: 900px;
+    justify-content: start;
+  }
+
+  .header {
+    margin-top: 5px;
+    width: 885px;
+    font-size: 18px;
+  }
+
+  .timer,
+  .btn {
+    padding: 5px 0;
+    width: 70px;
+  }
+
+  .timer {
+    padding: 7px 0 0 16px;
+    font-size: 15px;
+  }
+
+  .left-panel,
+  .right-panel {
+    display: flex;
+    width: 241px;
+    // border: 1px solid;
+  }
+
+  .game {
+    margin: 10px;
+    width: 584px;
+    height: 332px;
+    // border: 1px solid;
+  }
+
+  img {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 5px;
+  }
+
+  .footer {
+    bottom: 1px;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 894px) {
+  .container {
+    max-width: 580px;
+    // border: 1px solid;
+  }
+
+  .header {
+    margin-top: 5px;
+    width: 558px;
+    font-size: 13px;
+  }
+
+  .timer,
+  .btn {
+    margin-left: 7px;
+    padding: 9px 0;
+    width: 52px;
+  }
+
+  .timer {
+    padding: 10px 0 0 11px;
+    font-size: 12px;
+  }
+
+  .left-panel,
+  .right-panel {
+    display: flex;
+    width: 179px;
+    // border: 1px solid;
+  }
+
+  .right-panel .btn {
+    margin: 0 7px 0 0;
+  }
+
+  .game {
+    margin: 5px;
+    width: 442px;
+    height: 245px;
+    // border: 1px solid;
+  }
+
+  img {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 2px;
+  }
+
+  .footer {
+    bottom: 0;
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 564px) {
+  .warning {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/metal-texture.png');
+    z-index: 4;
+    h2 {
+      width: 295px;
+      height: 111px;
+      line-height: 3.5;
+      background: url('../assets/red-tree.jpg');
+      box-shadow: 0 3px 5px black;
+      border-radius: 3px;
+    }
+  }
 }

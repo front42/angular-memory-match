@@ -1,4 +1,4 @@
-.players {
+.metal {
   position: relative;
   display: flex;
   justify-content: center;
@@ -10,6 +10,19 @@
   box-shadow: 0 0 17px 3px #000;
 }
 
+h2 {
+  width: 295px;
+  height: 111px;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  line-height: 3.5;
+  text-shadow: 0 0 4px white;
+  background: url('../../assets/red-tree.jpg');
+  box-shadow: 0 3px 5px black;
+  border-radius: 3px;
+}
+
 .close {
   position: absolute;
   top: 7px;
@@ -19,7 +32,7 @@
   color: #a52016;
   border: none;
   background-color: transparent;
-  transition: 0.3s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
@@ -30,4 +43,26 @@
 .close:active {
   color: red;
   text-shadow: 0 0 5px red;
+}
+
+@media screen and (max-width: 1055px) {
+  .metal {
+    width: 543px;
+    height: 317px;
+    font-size: 18px;
+    h2 {
+      line-height: 4;
+    }
+  }
+}
+
+@media screen and (max-width: 894px) {
+  .metal {
+    width: 431px;
+    height: 242px;
+    font-size: 13px;
+    h2 {
+      line-height: 5.5;
+    }
+  }
 }
