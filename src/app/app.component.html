@@ -14,7 +14,12 @@
   </header>
   <div class="game">
     @for (album of albums; track $index) {
-      <div class="disc"><img src="{{ album }}" alt="Disc" /></div>
+      <div class="album-container" (click)="flipAlbum($index, $event)">
+        <div class="album" [class.flipped]="album.isFlipped">
+          <div class="album-front" [style.background-image]="album.front"></div>
+          <div class="album-back" [style.background-image]="album.back"></div>
+        </div>
+      </div>
     }
     <div class="router-wrapper" *ngIf="!isMainPage">
       <router-outlet></router-outlet>
