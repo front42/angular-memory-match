@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { DecimalPipe, NgIf } from '@angular/common';
 import { filter } from 'rxjs';
@@ -77,6 +77,21 @@ export class AppComponent implements OnInit {
       this.order();
       this.albums.forEach((album) => (album.isFlipped = true));
     }, 1000);
+  }
+
+  protected toggleFullscreen(): void {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+
+  @HostListener('document:keydown', ['$event']) handleF11Keydown(event: KeyboardEvent): void {
+    if (event.code === 'F11') {
+      event.preventDefault();
+      this.toggleFullscreen();
+    }
   }
 
   ngOnInit(): void {

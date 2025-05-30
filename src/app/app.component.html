@@ -9,7 +9,7 @@
     <div class="right-panel">
       <button class="btn" routerLink="records" [disabled]="isPlaying">Records</button>
       <button class="btn" routerLink="players" [disabled]="isPlaying">Players</button>
-      <button class="btn" routerLink="game" [disabled]="isPlaying">Game</button>
+      <button class="btn" (click)="toggleFullscreen()">Screen</button>
     </div>
   </header>
   <div class="game">
