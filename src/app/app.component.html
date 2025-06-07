@@ -1,20 +1,22 @@
 <div class="container">
   <header class="header">
     <div class="left-panel">
-      <div class="timer">{{ minutes | number : '2.0' }}:{{ seconds | number : '2.0' }}</div>
+      <div class="timer">
+        <span class="minus" *ngIf="isPregap">-</span>{{ minutes | number : '2.0' }}:{{ seconds | number : '2.0' }}
+      </div>
       <button class="btn play" [disabled]="isPlaying" (click)="play()">Play</button>
-      <button class="btn" [disabled]="!isPlaying" (click)="stop()">Stop</button>
+      <button class="btn" [disabled]="isPregap || !isPlaying" (click)="stop()">Stop</button>
     </div>
     <h2>Just play and remember the Time...</h2>
     <div class="right-panel">
-      <button class="btn" routerLink="records" [disabled]="isPlaying">Records</button>
       <button class="btn" routerLink="players" [disabled]="isPlaying">Players</button>
+      <button class="btn" routerLink="records" [disabled]="isPlaying">Records</button>
       <button class="btn" (click)="toggleFullscreen()">Screen</button>
     </div>
   </header>
   <div class="game">
     @for (album of albums; track $index) {
-      <div class="album-container" (click)="flipAlbum($index, $event)">
+      <div class="album-container" (click)="flipAlbum(album)" (transitionstart)="adjustZIndex($event)">
         <div class="album" [class.flipped]="album.isFlipped">
           <div class="album-front" [style.background-image]="album.front"></div>
           <div class="album-back" [style.background-image]="album.back"></div>
