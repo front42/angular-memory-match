@@ -42,7 +42,6 @@ h2 {
   border-radius: 4px;
   background-color: #1d64bb;
   box-shadow: 0 0 5px black;
-  // text-shadow: 0 0 4px black;
 }
 
 .timer {
@@ -111,7 +110,6 @@ h2 {
 .album-container {
   perspective: 255px;
   margin-bottom: 16px;
-  // z-index: 1;
 }
 
 .album {
@@ -193,8 +191,8 @@ a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: mediumblue; // black - blue, darkblue, mediumblue, royalblue, slateblue
-  opacity: 0.4;
+  background-color: mediumblue;
+  opacity: 0.5;
 }
 
 .warning {
@@ -332,6 +330,7 @@ a:hover {
     justify-content: center;
     align-items: center;
     background: url('../assets/metal-texture.png');
+    z-index: 1;
     h2 {
       width: 295px;
       height: 111px;

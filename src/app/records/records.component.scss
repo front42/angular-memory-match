@@ -1,26 +1,16 @@
 .metal {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   width: 581px;
   height: 467px;
+  padding: 52px 0 54px;
+  font-size: 22px;
   border-radius: 2px;
   background: url('../../assets/metal-texture.png');
   box-shadow: 0 0 17px 3px #000;
-}
-
-h2 {
-  width: 295px;
-  height: 111px;
-  font-style: italic;
-  font-weight: 400;
-  text-align: center;
-  line-height: 3.5;
-  text-shadow: 0 0 4px white;
-  background: url('../../assets/red-tree.jpg');
-  box-shadow: 0 3px 5px black;
-  border-radius: 3px;
 }
 
 .close {
@@ -45,14 +35,87 @@ h2 {
   text-shadow: 0 0 5px red;
 }
 
+.reset-btn {
+  position: absolute;
+  bottom: 18px;
+  width: 60px;
+  height: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1d64bb;
+  box-shadow: 0 0 5px black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background-color: #2774ca;
+}
+
+.reset-btn:active {
+  box-shadow: 0 0 2px black;
+  text-shadow: 0 0 5px white;
+}
+
+.records-container {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.records-container::-webkit-scrollbar {
+  display: none;
+}
+
+.record {
+  display: flex;
+  justify-content: space-between;
+  width: 490px;
+  text-shadow: 0 0 5px black;
+}
+
+.record:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+.player {
+  width: 225px;
+  padding-left: 10px;
+  text-align: left;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.time {
+  width: 70px;
+  text-align: right;
+  color: greenyellow;
+}
+
+.date {
+  width: 230px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.record:first-of-type {
+  text-shadow: 0 0 5px white;
+}
+
 @media screen and (max-width: 1250px) {
   .metal {
     width: 543px;
     height: 317px;
-    font-size: 18px;
-    h2 {
-      line-height: 4;
-    }
+    font-size: 21px;
+  }
+
+  .record {
+    width: 450px;
+  }
+
+  .record:not(:last-child) {
+    margin-bottom: 13px;
   }
 }
 
@@ -60,9 +123,24 @@ h2 {
   .metal {
     width: 431px;
     height: 242px;
-    font-size: 13px;
-    h2 {
-      line-height: 5.5;
-    }
+    font-size: 20px;
+  }
+
+  .record {
+    width: 415px;
+  }
+
+  .record:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .player {
+    width: 205px;
+    padding-left: 12px;
+  }
+
+  .date {
+    width: 210px;
+    word-spacing: -1px;
   }
 }

@@ -1,4 +1,17 @@
 <div class="metal">
-  <h2>Players</h2>
+  <header class="header">
+    <span>Select player</span>
+    <input #playerInput class="player-input" type="text" placeholder="⇓ click or write&#9998;" />
+    <span>and make it!</span>
+    @if (playerInput.value && !players.includes(playerInput.value)) {
+      <button class="save-player" (click)="addPlayer(playerInput.value)">✓</button>
+    }
+  </header>
   <button class="close" (click)="goMainPage()">✕</button>
+  <div class="players-container">
+    @for (player of players; track $index) {
+      <div class="player" [class.selected]="player === selectedPlayer" (click)="selectPlayer(playerInput, player)">{{ player }}</div>
+    }
+  </div>
+  <button class="reset-btn" (click)="resetPlayers(playerInput)">Reset</button>
 </div>

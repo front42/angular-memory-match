@@ -3,12 +3,13 @@ import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router
 import { DecimalPipe, NgIf } from '@angular/common';
 import { filter } from 'rxjs';
 
+import { DataService } from './data.service';
+
 class Album {
   constructor(public front: string, public back: string, public isFlipped: boolean) {}
 }
 
 @Component({
-  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -27,7 +28,7 @@ export class AppComponent implements OnInit {
   protected activeAnimation: boolean = false;
   protected matchCounter: number = 0;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private dataService: DataService) {
     for (let i = 0; i < 14; i++) {
       this.albumsInOrder.push(
         new Album(`url(assets/album-${i < 10 ? '0' + i : i}.jpg)`, 'url(assets/vinyl-lp.png)', true),
@@ -77,7 +78,7 @@ export class AppComponent implements OnInit {
     this.matchCounter = 0;
     this.isPlaying = false;
     this.firstFlipped = null;
-    this.albums.forEach((album) => (album.isFlipped = false)); // for what earlier there was needed setTimeout with 0
+    this.albums.forEach((album) => (album.isFlipped = false));
     setTimeout(() => {
       this.order();
       this.albums.forEach((album) => (album.isFlipped = true));
@@ -110,10 +111,16 @@ export class AppComponent implements OnInit {
     } else if (this.firstFlipped.front === album.front) {
       this.matchCounter++;
       if (this.matchCounter === 14) {
+        this.dataService.addRecord({
+          player: this.dataService.getSelectedPlayer(),
+          minutes: this.minutes,
+          seconds: this.seconds,
+          date: new Date(),
+        });
         clearInterval(this.intervalId);
         setTimeout(() => {
           alert(
-            `worKING alert:\nYou did it in ${
+            `worKING alert:\nCongrats ${this.dataService.getSelectedPlayer()}, you did it in ${
               this.minutes ? (this.minutes !== 1 ? this.minutes + ' minutes' : this.minutes + ' minute') : ''
             }${this.seconds ? (this.seconds !== 1 ? ' ' + this.seconds + ' seconds' : ' ' + this.minutes + ' second') : ''}!`
           );

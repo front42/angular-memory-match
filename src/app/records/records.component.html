@@ -1,4 +1,13 @@
 <div class="metal">
-  <h2>Records</h2>
+  <div class="records-container">
+    @for (record of records; track $index) {
+      <div class="record">
+        <span class="player">{{ record.player }}</span>
+        <span class="time">{{ record.minutes }} : {{ record.seconds | number : '2.0-0' }}</span>
+        <span class="date">{{ record.date | date : 'MMM dd, yyyy, HH:mm' }}</span>
+      </div>
+    }
+  </div>
   <button class="close" (click)="goMainPage()">✕</button>
+  <button class="reset-btn" (click)="resetRecords()">Reset</button>
 </div>
