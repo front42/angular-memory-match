@@ -1,62 +1,4 @@
-.metal {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  width: 581px;
-  height: 467px;
-  padding: 52px 0 54px;
-  font-size: 22px;
-  border-radius: 2px;
-  background: url('../../assets/metal-texture.png');
-  box-shadow: 0 0 17px 3px #000;
-}
-
-.close {
-  position: absolute;
-  top: 7px;
-  right: 17px;
-  font-size: 27px;
-  font-weight: bold;
-  color: #a52016;
-  border: none;
-  background-color: transparent;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.close:hover {
-  text-shadow: 0 0 2px #a52016;
-}
-
-.close:active {
-  color: red;
-  text-shadow: 0 0 5px red;
-}
-
-.reset-btn {
-  position: absolute;
-  bottom: 18px;
-  width: 60px;
-  height: 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 4px;
-  background-color: #1d64bb;
-  box-shadow: 0 0 5px black;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.reset-btn:hover {
-  background-color: #2774ca;
-}
-
-.reset-btn:active {
-  box-shadow: 0 0 2px black;
-  text-shadow: 0 0 5px white;
-}
+// metal base - banner.scss
 
 .header {
   position: relative;
@@ -140,12 +82,6 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .metal {
-    width: 543px;
-    height: 317px;
-    font-size: 21px;
-  }
-
   .header {
     width: 426px;
   }
@@ -168,12 +104,6 @@
 }
 
 @media screen and (max-width: 894px) {
-  .metal {
-    width: 431px;
-    height: 242px;
-    font-size: 20px;
-  }
-
   .header {
     width: 390px;
   }

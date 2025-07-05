@@ -1,19 +1,23 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
-import { DecimalPipe, NgIf } from '@angular/common';
+import { DecimalPipe, NgClass } from '@angular/common';
 import { filter } from 'rxjs';
 
 import { DataService } from './data.service';
 
 class Album {
-  constructor(public front: string, public back: string, public isFlipped: boolean) {}
+  constructor(
+    public front: string,
+    public back: string,
+    public isFlipped: boolean,
+  ) {}
 }
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [RouterOutlet, RouterLink, DecimalPipe, NgIf],
+  styleUrls: ['./app.component.scss', './banner.scss'],
+  imports: [RouterOutlet, RouterLink, DecimalPipe, NgClass],
 })
 export class AppComponent implements OnInit {
   protected isMainPage: boolean = true;
@@ -27,12 +31,18 @@ export class AppComponent implements OnInit {
   protected firstFlipped: Album | null = null;
   protected activeAnimation: boolean = false;
   protected matchCounter: number = 0;
+  protected player: string = '';
+  protected success: boolean = false;
+  protected fail: boolean = false;
 
-  constructor(private router: Router, private dataService: DataService) {
+  constructor(
+    private router: Router,
+    private dataService: DataService,
+  ) {
     for (let i = 0; i < 14; i++) {
       this.albumsInOrder.push(
         new Album(`url(assets/album-${i < 10 ? '0' + i : i}.jpg)`, 'url(assets/vinyl-lp.png)', true),
-        new Album(`url(assets/album-${i < 10 ? '0' + i : i}.jpg)`, 'url(assets/vinyl-lp.png)', true)
+        new Album(`url(assets/album-${i < 10 ? '0' + i : i}.jpg)`, 'url(assets/vinyl-lp.png)', true),
       );
     }
     this.order();
@@ -53,6 +63,7 @@ export class AppComponent implements OnInit {
 
   protected play(): void {
     if (this.minutes || this.seconds) return;
+    this.player = this.dataService.getSelectedPlayer();
     this.seconds = 10;
     this.isPregap = true;
     this.isPlaying = true;
@@ -69,6 +80,10 @@ export class AppComponent implements OnInit {
           this.seconds = 0;
           this.minutes += 1;
         }
+        if (this.minutes === 60) {
+          clearInterval(this.intervalId);
+          this.fail = true;
+        }
       }, 1000);
     }, 10000);
   }
@@ -84,6 +99,12 @@ export class AppComponent implements OnInit {
       this.albums.forEach((album) => (album.isFlipped = true));
     }, 900);
     setTimeout(() => (this.minutes = this.seconds = 0), 1700);
+  }
+
+  protected closeBanner(): void {
+    setTimeout(() => this.stop(), 500);
+    this.success = false;
+    this.fail = false;
   }
 
   protected toggleFullscreen(): void {
@@ -112,19 +133,14 @@ export class AppComponent implements OnInit {
       this.matchCounter++;
       if (this.matchCounter === 14) {
         this.dataService.addRecord({
-          player: this.dataService.getSelectedPlayer(),
+          player: this.player,
           minutes: this.minutes,
           seconds: this.seconds,
           date: new Date(),
         });
         clearInterval(this.intervalId);
         setTimeout(() => {
-          alert(
-            `worKING alert:\nCongrats ${this.dataService.getSelectedPlayer()}, you did it in ${
-              this.minutes ? (this.minutes !== 1 ? this.minutes + ' minutes' : this.minutes + ' minute') : ''
-            }${this.seconds ? (this.seconds !== 1 ? ' ' + this.seconds + ' seconds' : ' ' + this.minutes + ' second') : ''}!`
-          );
-          this.stop();
+          this.success = true;
         }, 1200);
       }
       this.activeAnimation = false;

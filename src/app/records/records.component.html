@@ -1,10 +1,10 @@
-<div class="metal">
+<div class="banner">
   <div class="records-container">
     @for (record of records; track $index) {
       <div class="record">
         <span class="player">{{ record.player }}</span>
-        <span class="time">{{ record.minutes }} : {{ record.seconds | number : '2.0-0' }}</span>
-        <span class="date">{{ record.date | date : 'MMM dd, yyyy, HH:mm' }}</span>
+        <span class="time">{{ record.minutes }} : {{ record.seconds | number: '2.0-0' }}</span>
+        <span class="date">{{ record.date | date: 'MMM dd, yyyy, HH:mm' }}</span>
       </div>
     }
   </div>

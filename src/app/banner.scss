@@ -1,0 +1,146 @@
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 581px;
+  height: 467px;
+  padding: 52px 0 54px;
+  font-size: 22px;
+  border-radius: 2px;
+  background: url('../assets/metal-texture.png');
+  box-shadow: 0 0 17px 3px #000;
+}
+
+.close {
+  position: absolute;
+  top: 7px;
+  right: 17px;
+  font-size: 27px;
+  font-weight: bold;
+  color: #a52016;
+  border: none;
+  background-color: transparent;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.close:hover {
+  text-shadow: 0 0 2px #a52016;
+}
+
+.close:active {
+  color: red;
+  text-shadow: 0 0 5px red;
+}
+
+.ok-btn,
+.reset-btn {
+  position: absolute;
+  bottom: 18px;
+  width: 60px;
+  height: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #1d64bb;
+  box-shadow: 0 0 5px black;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.ok-btn:hover,
+.reset-btn:hover {
+  background-color: #2774ca;
+}
+
+.ok-btn:active,
+.reset-btn:active {
+  box-shadow: 0 0 2px black;
+  color: greenyellow;
+  text-shadow: 0 0 5px white;
+}
+
+.success p:not(:nth-child(3)),
+.fail p:not(:nth-child(3)) {
+  margin-bottom: 12px;
+}
+
+.active-player {
+  width: 485px;
+  min-height: 24px;
+  padding: 0 10px;
+  text-align: center;
+  font-weight: bold;
+  color: greenyellow;
+  text-shadow: 0 0 5px white;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.banner-time {
+  margin-top: 4px;
+  padding-left: 19px;
+  font-family: 'MOSCOW2024', sans-serif;
+  font-size: 142px;
+  color: greenyellow;
+  text-shadow: 0 0 5px white;
+}
+
+.fail .active-player,
+.fail .banner-time {
+  color: crimson;
+}
+
+@media screen and (max-width: 1250px) {
+  .banner {
+    width: 543px;
+    height: 317px;
+    font-size: 21px;
+  }
+
+  .success,
+  .fail {
+    padding-top: 15px;
+  }
+
+  .success p:not(:nth-child(3)),
+  .fail p:not(:nth-child(3)) {
+    margin-bottom: 13px;
+  }
+
+  .active-player {
+    width: 520px;
+  }
+
+  .banner-time {
+    margin-top: 10px;
+    padding-left: 12px;
+    font-size: 100px;
+  }
+}
+
+@media screen and (max-width: 894px) {
+  .banner {
+    width: 431px;
+    height: 242px;
+    font-size: 20px;
+  }
+
+  .success p:not(:nth-child(3)),
+  .fail p:not(:nth-child(3)) {
+    margin-bottom: 15px;
+  }
+
+  .active-player {
+    width: 415px;
+  }
+
+  .banner-time {
+    margin-top: 12px;
+    padding-left: 7px;
+    font-size: 60px;
+  }
+}

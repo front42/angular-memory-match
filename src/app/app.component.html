@@ -2,7 +2,10 @@
   <header class="header">
     <div class="left-panel">
       <div class="timer">
-        <span class="minus" *ngIf="isPregap">-</span>{{ minutes | number : '2.0' }}:{{ seconds | number : '2.0' }}
+        @if (isPregap) {
+          <span class="minus">-</span>
+        }
+        {{ minutes | number: '2.0' }}:{{ seconds | number: '2.0' }}
       </div>
       <button class="btn play" [disabled]="isPlaying" (click)="play()">Play</button>
       <button class="btn" [disabled]="isPregap || !isPlaying" (click)="stop()">Stop</button>
@@ -23,13 +26,39 @@
         </div>
       </div>
     }
-    <div class="router-wrapper" *ngIf="!isMainPage">
-      <router-outlet></router-outlet>
-    </div>
+    @if (!isMainPage) {
+      <div class="router-wrapper">
+        <router-outlet></router-outlet>
+      </div>
+    }
+    @if (success) {
+      <div class="success-wrapper">
+        <div class="banner success">
+          <p>Congratulations!</p>
+          <p class="active-player">{{ player }}</p>
+          <p>Your time is</p>
+          <p class="banner-time">{{ minutes | number: '2.0' }}:{{ seconds | number: '2.0' }}</p>
+          <button class="ok-btn" (click)="closeBanner()">Ok</button>
+        </div>
+      </div>
+    }
+    @if (fail) {
+      <div class="fail-wrapper">
+        <div class="banner fail">
+          <p>Let's take a rest and try next time!</p>
+          <p class="active-player">{{ player }}</p>
+          <p>You've been fighting bravely for an</p>
+          <p class="banner-time">HOUR</p>
+          <button class="ok-btn" (click)="closeBanner()">Ok</button>
+        </div>
+      </div>
+    }
   </div>
   <footer class="footer">
     <p>&copy;&#8239;2025 All Rights Reserved. <a href="https://github.com/front42" target="_blank">&#64;front42</a></p>
   </footer>
 </div>
-<div class="overlay" *ngIf="!isMainPage"></div>
+@if (!isMainPage || success || fail) {
+  <div class="overlay" [ngClass]="{ blue: !isMainPage, lime: success, red: fail }"></div>
+}
 <div class="warning"><h2>Turn your device</h2></div>

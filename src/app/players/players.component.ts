@@ -6,14 +6,17 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrl: './players.component.scss',
+  styleUrls: ['../banner.scss', './players.component.scss'],
   imports: [],
 })
 export class PlayersComponent implements OnInit {
   protected selectedPlayer: string = '';
   protected players: string[] = [];
 
-  constructor(private router: Router, private dataService: DataService) {}
+  constructor(
+    private router: Router,
+    private dataService: DataService,
+  ) {}
 
   protected goMainPage(): void {
     this.router.navigate(['/']);

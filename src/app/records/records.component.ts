@@ -8,13 +8,16 @@ import { IRecord } from '../data.service';
 @Component({
   selector: 'app-records',
   templateUrl: './records.component.html',
-  styleUrl: './records.component.scss',
+  styleUrls: ['../banner.scss', './records.component.scss'],
   imports: [DecimalPipe, DatePipe],
 })
 export class RecordsComponent implements OnInit {
   protected records: IRecord[] = [];
 
-  constructor(private router: Router, private dataService: DataService) {}
+  constructor(
+    private router: Router,
+    private dataService: DataService,
+  ) {}
 
   protected goMainPage(): void {
     this.router.navigate(['/']);
