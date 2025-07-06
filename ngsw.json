@@ -1,0 +1,115 @@
+{
+  "configVersion": 1,
+  "timestamp": 1751793937445,
+  "index": "https://front42.github.io/angular-memory-match/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://front42.github.io/angular-memory-match/favicon.png",
+        "https://front42.github.io/angular-memory-match/index.html",
+        "https://front42.github.io/angular-memory-match/main.25732a84f0b72861.js",
+        "https://front42.github.io/angular-memory-match/manifest.webmanifest",
+        "https://front42.github.io/angular-memory-match/polyfills.1ef6ac1c39dbe006.js",
+        "https://front42.github.io/angular-memory-match/runtime.6e83179b2217ee0a.js",
+        "https://front42.github.io/angular-memory-match/styles.8084846326b26bfc.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://front42.github.io/angular-memory-match/assets/album-00.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-004.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-01.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-02.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-03.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-04.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-05.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-06.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-07.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-08.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-09.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-10.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-11.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-12.jpg",
+        "https://front42.github.io/angular-memory-match/assets/album-13.jpg",
+        "https://front42.github.io/angular-memory-match/assets/fonts/moscow2024.otf",
+        "https://front42.github.io/angular-memory-match/assets/icons/icon-192x192.png",
+        "https://front42.github.io/angular-memory-match/assets/metal-texture.png",
+        "https://front42.github.io/angular-memory-match/assets/red-tree.jpg",
+        "https://front42.github.io/angular-memory-match/assets/vinyl-lp.png",
+        "https://front42.github.io/angular-memory-match/assets/vinyl-playing.jpg",
+        "https://front42.github.io/angular-memory-match/metal-texture.1d40f6932b029413.png",
+        "https://front42.github.io/angular-memory-match/moscow2024.e8d5a30ee08f5063.otf",
+        "https://front42.github.io/angular-memory-match/red-tree.e9601c809c13c9ee.jpg",
+        "https://front42.github.io/angular-memory-match/vinyl-playing.d094441db3ce9893.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://front42.github.io/angular-memory-match/assets/album-00.jpg": "3f0e61f5dd9bcb2e8bcd97d1ea84d68e0e9ccb8a",
+    "https://front42.github.io/angular-memory-match/assets/album-004.jpg": "6f57a47c7aa3d4c5fc6de2aa8ca5dc25391a400f",
+    "https://front42.github.io/angular-memory-match/assets/album-01.jpg": "7a31cf2afdbbc239b5c8c5c035979acf8eac72f5",
+    "https://front42.github.io/angular-memory-match/assets/album-02.jpg": "eb364f65e1f7cb64c7175b965184a8c1c0b88604",
+    "https://front42.github.io/angular-memory-match/assets/album-03.jpg": "5bb8a3b0e9ee6f1f27819b0eba1336bb744659e6",
+    "https://front42.github.io/angular-memory-match/assets/album-04.jpg": "825abc5ee45b9c7222d484d4fc714df7b2efbbd9",
+    "https://front42.github.io/angular-memory-match/assets/album-05.jpg": "25980f169cf8dcf4a5e1ec1d1aa0867c40278e84",
+    "https://front42.github.io/angular-memory-match/assets/album-06.jpg": "8cecccf62ea2bbf12b0554896f1a3d2fc34c7af2",
+    "https://front42.github.io/angular-memory-match/assets/album-07.jpg": "dddc5183d6f79b9db8c8bf0116e63a3e99a6170b",
+    "https://front42.github.io/angular-memory-match/assets/album-08.jpg": "5a05172169b05324d1b543d02b4390218f0fc4d2",
+    "https://front42.github.io/angular-memory-match/assets/album-09.jpg": "a638ad49fb37c12f17d1efc6e610b91a630b4f57",
+    "https://front42.github.io/angular-memory-match/assets/album-10.jpg": "cf9e36ec89ac8db24e8c17499c9e8c50325ac564",
+    "https://front42.github.io/angular-memory-match/assets/album-11.jpg": "07628bfe2240d9730accf558530da50fb4d657f8",
+    "https://front42.github.io/angular-memory-match/assets/album-12.jpg": "c2c53c2a304e0f9d7c8c41113cfec93f11ab07e7",
+    "https://front42.github.io/angular-memory-match/assets/album-13.jpg": "2560eeff73405c8243814b7ca0fc0f00dedafcc1",
+    "https://front42.github.io/angular-memory-match/assets/fonts/moscow2024.otf": "73d0394c49a453eb5b423942a38554e5310f583d",
+    "https://front42.github.io/angular-memory-match/assets/icons/icon-192x192.png": "13e444331782a1a9d04f02d8f1aed51a63c54b6c",
+    "https://front42.github.io/angular-memory-match/assets/metal-texture.png": "0b26950c5270bf747812b224d55802bbc80756d6",
+    "https://front42.github.io/angular-memory-match/assets/red-tree.jpg": "7b4ef66d3f6c3b699be86453624eec04dd83016b",
+    "https://front42.github.io/angular-memory-match/assets/vinyl-lp.png": "882ec65f67ce8a9c295ae3bca6e0eec4348ed9a3",
+    "https://front42.github.io/angular-memory-match/assets/vinyl-playing.jpg": "36f7ead7705cf65edfc82e93833cf585a0c90b77",
+    "https://front42.github.io/angular-memory-match/favicon.png": "ea41cd7d5c9adb8f58489b9a3fb4b6f6d496ed81",
+    "https://front42.github.io/angular-memory-match/index.html": "e7813f582da5449b34eac4f25c72f67cd8319205",
+    "https://front42.github.io/angular-memory-match/main.25732a84f0b72861.js": "b6be1c41603635cf6bac4ef838461b13cc67ac54",
+    "https://front42.github.io/angular-memory-match/manifest.webmanifest": "dc6a52db07c0c59844e4ff8dfa7479bba3260088",
+    "https://front42.github.io/angular-memory-match/metal-texture.1d40f6932b029413.png": "0b26950c5270bf747812b224d55802bbc80756d6",
+    "https://front42.github.io/angular-memory-match/moscow2024.e8d5a30ee08f5063.otf": "73d0394c49a453eb5b423942a38554e5310f583d",
+    "https://front42.github.io/angular-memory-match/polyfills.1ef6ac1c39dbe006.js": "aca32ab562d83b740d47d32c2f13c8890c5c7eab",
+    "https://front42.github.io/angular-memory-match/red-tree.e9601c809c13c9ee.jpg": "7b4ef66d3f6c3b699be86453624eec04dd83016b",
+    "https://front42.github.io/angular-memory-match/runtime.6e83179b2217ee0a.js": "cb30bdbdf9e74570b5b6b881b5fceb6ceab44fe4",
+    "https://front42.github.io/angular-memory-match/styles.8084846326b26bfc.css": "82c3718257b699d774807df3adf0aa8f0c75739d",
+    "https://front42.github.io/angular-memory-match/vinyl-playing.d094441db3ce9893.jpg": "36f7ead7705cf65edfc82e93833cf585a0c90b77"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
