@@ -1,8 +1,8 @@
-# <img src="./src/favicon.png" alt="Angular Memory Match" height="17"/>&#8239;angular-memory-match
+# <img src="./src/favicon.png" alt="Angular Memory Match" width="17" height="17"/>&#8239;angular-memory-match
 Just play and remember the Time...  
 ***https://front42.github.io/angular-memory-match***  
 
-<img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" height="17"/>  
+<img src="https://rolling-scopes-school.github.io/front42-JSFE2021Q1/presentation/z/front42.jpg" alt="logo" width="107" height="40"/>  
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
 

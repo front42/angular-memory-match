@@ -1,0 +1,17 @@
+{
+  "name": "Memory Match",
+  "short_name": "Memory Match",
+  "theme_color": "#a52016",
+  "background_color": "#a52016",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}
